@@ -147,6 +147,7 @@ nav {
 footer {
     height: 80px;
     color: #999999;
+    font-size: 12px;
     justify-content: center;
     align-items: center;
 }
