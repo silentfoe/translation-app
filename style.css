@@ -126,21 +126,31 @@ nav {
     margin-left: 16px;
 }
 
+/* MAIN */
+
+main {
+    min-height: calc(100svh - 180px); /* View height - (header + footer) */
+    display: flex;
+    align-items: center;
+    padding: 100px 0 200px;
+}
+
 /* HERO SECTION */
 .hero-section .container {
-    width: fit-content;
     display: grid;
-    grid-template-rows: 240px 170px;
-    grid-template-columns: 500px auto;
+    width: fit-content;
+    height: fit-content;
+    grid-template-rows: min-content min-content;
+    grid-template-columns: max-content auto;
     grid-template-areas: 
         "heading heading"
         "list buttons";
-    min-height: calc(100svh - 180px);
-    padding: 200px;
-    gap: 10px 100px;
+    padding-inline: 200px;
+    gap: 30px 100px;
 }
 
 .hero-section-heading {
+    margin: 0;
     grid-area: heading;
 }
 
