@@ -16,7 +16,7 @@
 - **HTML5 & CSS3**: For structuring and styling the application.
 - **WebSockets**: For real-time bidirectional event-based communication.
 - **Node.js**: For the scalable and fast backend (Express?).
-  **MongoDB**: As the NoSQL database to store user data and chat histories.
+- **MongoDB**: As the NoSQL database to store user data and chat histories.
 
 ## Getting Started
 
