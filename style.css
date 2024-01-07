@@ -1,13 +1,39 @@
+/* Importing the Montserrat font */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
     box-sizing: border-box; /* Include borders and padding in the sizing of elements */
 }
 
+/* Color variables */
+:root {
+    /* Text colors */
+    --text-color-1: #EEEEEE; /* High visibility text */
+    --text-color-2: #BBBBBB; /* Medium visibility text */
+    --text-color-3: #999999; /* Low visibility text */
+
+    /*Background colors */
+    --background-color-1: #111111; /* Main background color */
+    --background-color-1-hover: #151515; /* Hover color for secondary button */
+    --background-color-1-active: #0B0B0B; /* active color for secondary button */
+    --background-color-2: #222222; /* Background color for header/footer */
+
+    /* Special colors */
+    --primary-color: #017CC2; /* Color for primary buttons etc. */
+    --primary-color-hover: #006CB2; /* Hover color for primary buttons */
+    --primary-color-active: #005CA2; /* Active color for primary buttons */
+    --accent-color: #44BA3A; /* Color for visual elements. */
+
+    /* Colors for borders etc. */
+    --low-visibility-color: #333333; /* Low visibility for borders etc. */
+    --low-visibility-color-hover: #383838; /* Hover color for borders etc. */
+    --low-visibility-color-active: #292929; /* Active color for borders etc. */
+}
+
 body {
     margin: 0;
-    color: #EEEEEE;
-    background: #111111;
+    color: var(--text-color-1);
+    background: var(--background-color-1);
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
 }
@@ -37,7 +63,7 @@ h1 {
 /* HEADER */
 header,
 footer {
-    background: #222222;
+    background: var(--background-color-2);
     display: flex;
 }
 
@@ -50,7 +76,7 @@ header {
 }
 
 .green-box::before {
-    background: #44BA3A;
+    background: var(--accent-color);
     width: 168px;
     height: 77px;
     content: "";
@@ -77,7 +103,7 @@ header {
 }
 
 nav {
-    color: #999999;
+    color: var(--text-color-3);
 }
 
 .nav-ul {
@@ -86,12 +112,12 @@ nav {
 }
 
 .nav-ul li:hover {
-    color: #BBBBBB;
+    color: var(--text-color-2);
     cursor: pointer;
 }
 
 .nav-ul .vertical-divider {
-    background: #999999;
+    background: var(--text-color-3);
     height: 16px;
     width: 1px;
 }
@@ -119,7 +145,7 @@ nav {
 }
 
 .hero-section-ul {
-    color: #DDDDDD;
+    color: var(--text-color-2);
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -146,13 +172,15 @@ nav {
 /* FOOTER */
 footer {
     height: 80px;
-    color: #999999;
+    color: var(--text-color-3);
+    font-size: 12px;
     justify-content: center;
     align-items: center;
 }
 
 /* BUTTONS */
 .btn {
+    color: var(--text-color-1);
     width: 300px;
     height: 65px;
     border-radius: 33px;
@@ -163,30 +191,28 @@ footer {
 }
 
 .primary-btn {
-    color: #EEEEEE;
-    background: #017CC2;
+    background: var(--primary-color);
 }
 
 .primary-btn:hover {
-    background: #006CB2;
+    background: var(--primary-color-hover);
 }
 
 .primary-btn:active {
-    background: #005CA2;
+    background: var(--primary-color-active)
 }
 
 .secondary-btn {
-    color: #EEEEEE;
-    background: #111111;
-    border: 3px solid #333333;
+    background: var(--backround-color-1);
+    border: 3px solid var(--low-visibility-color);
 }
 
 .secondary-btn:hover {
-    background: #151515;
-    border: 3px solid #383838;
+    background: var(--background-color-1-hover);
+    border-color: var(--low-visibility-color-hover);
 }
 
 .secondary-btn:active {
-    background: #0B0B0B;
-    border: 3px solid #292929;
+    background: var(--background-color-1-active);
+    border-color: var(--low-visibility-color-active);
 }
