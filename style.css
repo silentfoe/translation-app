@@ -30,6 +30,8 @@
     --low-visibility-color-active: #292929; /* Active color for borders etc. */
 }
 
+/* LAYOUT */
+
 body {
     margin: 0;
     color: var(--text-color-1);
@@ -54,10 +56,19 @@ ul {
     list-style-type: none;
 }
 
+input {
+    height: 32px;
+    color: var(--text-color-1);
+    background: var(--low-visibility-color);
+    border: none;
+    padding-inline: 12px;
+    border-radius: 10px;
+}
+
+/* TYPOGRAPHY */
 h1 {
-    font-size: 4rem; /* 64px */
-    font-weight: 900;
-    max-width: 750px;
+    font-size: 36px;
+    font-weight: 600;
 }
 
 /* HEADER */
@@ -152,6 +163,9 @@ main {
 .hero-section-heading {
     margin: 0;
     grid-area: heading;
+    font-size: 4rem; /* 64px */
+    font-weight: 900;
+    max-width: 750px;
 }
 
 .hero-section-ul {
@@ -177,6 +191,38 @@ main {
     align-items: start;
     justify-content: end;
     gap: 16px;
+}
+
+/* SIGN UP SECTION */
+.signup-section .container {
+    display: grid;
+    width: fit-content;
+    height: fit-content;
+    grid-template-rows: max-content;
+    grid-template-columns: min-content max-content;
+    grid-template-areas: 
+        "icon form";
+    padding-inline: 200px;
+    gap: 30px 100px;
+}
+
+.signup-form {
+    display: grid;
+    grid-template-rows: repeat(6, max-content);
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "heading heading"
+        "firstname lastname"
+        "email email"
+        "newpw newpw"
+        "reenterpw reenterpw"
+        "button button";
+    grid-gap: 24px;
+}
+
+.signup-heading {
+    margin: 0;
+    grid-area: heading;
 }
 
 /* FOOTER */
@@ -225,4 +271,21 @@ footer {
 .secondary-btn:active {
     background: var(--background-color-1-active);
     border-color: var(--low-visibility-color-active);
+}
+
+/* Utility classes */
+.large-icon {
+    font-size: 320px;
+}
+
+.accent {
+    color: var(--accent-color)
+}
+
+.span-2 {
+    grid-column: 1/ span 2;
+}
+
+.center {
+    margin: auto;
 }
