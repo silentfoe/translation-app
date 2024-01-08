@@ -24,19 +24,35 @@
         <div id="header-placeholder"></div>
 
         <main>
-            <!-- Hero section -->
+            <!-- Sign up / Log in section -->
             <section class="signup-section">
                 <div class="container">
                     <i class="center large-icon accent fa-solid fa-earth-americas"></i>
-                    <form class="signup-form">
-                        <h1 class="signup-heading">Sign up</h1>
-                        <input type="text" placeholder="First name" required>
-                        <input type="text" placeholder="Last name" required>
-                        <input class="span-2" type="email" placeholder="Your email adress" required>
-                        <input class="span-2" type="password" placeholder="New password" required>
-                        <input class="span-2" type="password" placeholder="Re-enter password" required>
-                        <button type="submit" class="span-2 primary-btn btn">Sign up</button>
-                    </form>
+                    <div class="form-container">
+                        <!-- Toggle Switch -->
+                        <div class="toggle-switch">
+                            <button id="login-toggle" class="left-btn">Log in</button>
+                            <button id="signup-toggle" class="toggle-active right-btn">Sign up</button>
+                        </div>
+
+                        <!-- Log in form -->
+                        <form class="login-form" id="login-form">
+                            <input class="span-2" type="email" placeholder="Your email adress" required>
+                            <input class="span-2" type="password" placeholder="Password" required>
+                            <button type="submit" class="span-2 primary-btn btn">Log in</button>
+                            <a href="#">I forgot my password</a>
+                        </form>
+
+                        <!-- Sign up form -->
+                        <form class="signup-form" id="signup-form">
+                            <input type="text" placeholder="First name" required>
+                            <input type="text" placeholder="Last name" required>
+                            <input class="span-2" type="email" placeholder="Your email adress" required>
+                            <input class="span-2" type="password" placeholder="New password" required>
+                            <input class="span-2" type="password" placeholder="Re-enter password" required>
+                            <button type="submit" class="span-2 primary-btn btn">Sign up</button>
+                        </form>
+                    </div>
                 </div>
             </section>
         </main>

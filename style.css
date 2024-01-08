@@ -16,7 +16,10 @@
     --background-color-1: #111111; /* Main background color */
     --background-color-1-hover: #151515; /* Hover color for secondary button */
     --background-color-1-active: #0B0B0B; /* active color for secondary button */
-    --background-color-2: #222222; /* Background color for header/footer */
+
+    --background-color-2: #222222; /* Background color for header/footer and toggle button */
+    --background-color-2-hover: #262626; /* Hover color for toggle-button */
+    --background-color-2-active: #1C1C1C; /* Active color for toggle-button */
 
     /* Special colors */
     --primary-color: #017CC2; /* Color for primary buttons etc. */
@@ -69,6 +72,15 @@ input {
 h1 {
     font-size: 36px;
     font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color-3)
+}
+
+a:hover {
+    color: var(--accent-color)
 }
 
 /* HEADER */
@@ -193,7 +205,7 @@ main {
     gap: 16px;
 }
 
-/* SIGN UP SECTION */
+/* SIGN UP / LOG IN SECTION */
 .signup-section .container {
     display: grid;
     width: fit-content;
@@ -206,7 +218,42 @@ main {
     gap: 30px 100px;
 }
 
-.signup-form {
+.toggle-switch {
+    display: flex;
+}
+
+.left-btn, .right-btn {
+    color: var(--text-color-1);
+    background: var(--background-color-2);
+    font-size: 24px;
+    height: 48px;
+    width: 150px;
+    border: 0;
+    cursor: pointer;
+    margin-bottom: 1em;
+}
+
+.left-btn:hover,
+.right-btn:hover {
+    background: var(--background-color-2-hover)
+}
+
+.left-btn:active,
+.right-btn:active {
+    background: var(--background-color-2-active)
+}
+
+.left-btn {
+    border-radius: 24px 0 0 24px;
+}
+
+.right-btn {
+    border-radius: 0 24px 24px 0;
+}
+
+
+.signup-form,
+.login-form {
     display: grid;
     grid-template-rows: repeat(6, max-content);
     grid-template-columns: 1fr 1fr;
@@ -218,6 +265,10 @@ main {
         "reenterpw reenterpw"
         "button button";
     grid-gap: 24px;
+}
+
+.login-form {
+    display: none; 
 }
 
 .signup-heading {
@@ -288,4 +339,16 @@ footer {
 
 .center {
     margin: auto;
+}
+
+.toggle-active {
+    background-color: var(--primary-color);
+}
+
+.toggle-active:hover {
+    background-color: var(--primary-color-hover);
+}
+
+.toggle-active:active {
+    background-color: var(--primary-color-active);
 }
