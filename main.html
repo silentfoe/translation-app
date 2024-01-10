@@ -30,8 +30,8 @@
                     <!-- Left panel -->
                     <div class="chat-section-left-panel">
                         <img class="user-img" src="images/users/Kevin.png" alt="Profile image">
-                        <p><strong>Kevin Molid</strong></p>
-                        <p class="text-3">Currently learning Spanish</p>
+                        <p class="username"><strong>Kevin Molid</strong></p>
+                        <p class="user-status-text text-3">Currently learning Spanish</p>
                         <p>I know</p>
                         <img class="flag-img" src="images/flags/Flag_of_Norway.png" alt="Norway flag">
                         <img class="flag-img" src="images/flags/Flag-United-Kingdom.webp" alt="UK flag">
@@ -39,56 +39,74 @@
                         <img class="flag-img" src="images/flags/Flag_of_France.svg.webp" alt="France flag">
                         <img class="flag-img" src="images/flags/Flag-Spain.webp" alt="Spain flag">
                         <p><strong>My contacts</strong></p>
-                        <ul>
-                            <li>Polina</li>
-                            <li>Spencer</li>
+                        <ul class="user-ul">
+                            <li>
+                                <i class="online-icon fa-solid fa-circle"></i>
+                                <p class="inline username">Polina</p></li>
+                            <li>
+                                <i class="online-icon fa-solid fa-circle"></i>
+                                <p class="inline username">Spencer</p></li>
                         </ul>
-                        <p><strong>Offline</strong></p>
-                        <ul class="text-3">
-                            <li>Mike</li>
-                            <li>Noor</li>
+                        <p>Offline</p>
+                        <ul class="user-ul text-3">
+                            <li><p class="inline username">Mike</p></li>
+                            <li><p class="inline username">Noor</p></li>
                         </ul>
                     </div>
 
                     <!-- Main panel -->
                     <div class="chat-section-main-panel">
+                        <!-- Chat Header -->
                         <header class="chat-section-main-panel-header">
                             <img class="user-img" src="images/users/Polina.jpg" alt="Profile image">
                             <div class="user-txt">
-                                <p><strong>Polina Rykova</strong></p>
-                                <p class="text-3">"Yer a Web Wizard, Polina!" - Hagrid</p>
+                                <p class="username">
+                                    <i class="online-icon fa-solid fa-circle"></i>
+                                    <strong>Polina Rykova</strong></p>
+                                <p class="user-status-text text-3">"Yer a Web Wizard, Polina!" - Hagrid</p>
                             </div>
                         </header>
+                        <!-- Chat Messages Window -->
                         <div class="messages-window">
                             <ul>
                                 <li>
-                                    <p>Hi Kevin, something something, haha! 😂</p>
-                                    <p>Hi, Polina! I have no idea, bla bla bla... 🥳</p>
+                                    <div class="received message">
+                                        <p>Hi Kevin, something something, haha! 😂</p>
+                                    </div>
+                                    <div class="sent message">
+                                        <p>Hi, Polina! I have no idea, bla bla bla... 🥳</p>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
+                        <!-- Chat Input Window -->
                         <div class="chat-input-window">
                             <ul class="chat-input-window-icons">
                                 <li><i class="fa-solid fa-arrow-right-arrow-left"></i></li>
                                 <li><i class="fa-solid fa-face-smile"></i></li>
                             </ul>
-                            <p>Hei, Polina! Hvordan går det med deg?</p>
+                            <textarea class="chat-input-field"></textarea>
                             <button class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
                         </div>
                     </div>
 
                     <!-- Right panel -->
                     <div class="chat-section-right-panel">
+                        <form class="user-search-bar">
+                            <i class="search-icon fa-solid fa-magnifying-glass"></i>
+                            <input class="search-field" type="text" placeholder="">
+                        </form>
                         <p><strong>French learners</strong></p>
-                        <ul class="text-3">
-                            <li>RandomUser</li>
-                            <li>AnotherUser</li>
+                        <ul class="user-ul text-3">
+                            <li><p class="inline username">RandomUser</p></li>
+                            <li><p class="inline username">AnotherUser</p></li>
                         </ul>
                         <p><strong>Spanish learners</strong></p>
-                        <ul class="text-3">
-                            <li>ImaUser</li>
-                            <li>NotaUser</li>
-                            <li>JustaRobot</li>
+                        <ul class="user-ul text-3">
+                            <li><p class="inline username">ImaUser</p></li>
+                            <li><p class="inline username">NotaUser</p></li>
+                            <li><p class="inline username">JustaRobot</p></li>
+                            <li><p class="inline username">ImJustAI</p></li>
                         </ul>
                     </div>
                 </div>

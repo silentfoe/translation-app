@@ -5,7 +5,7 @@
     box-sizing: border-box; /* Include borders and padding in the sizing of elements */
 }
 
-/* Color variables */
+/* ---------- COLOR VARIABLES ---------- */
 :root {
     /* Text colors */
     --text-color-1: #EEEEEE; /* High visibility text */
@@ -26,6 +26,7 @@
     --primary-color-hover: #006CB2; /* Hover color for primary buttons */
     --primary-color-active: #005CA2; /* Active color for primary buttons */
     --accent-color: #44BA3A; /* Color for visual elements. */
+    --accent-color-50: #2E6929; /* Darker color for visual elements. */
 
     /* Colors for borders etc. */
     --low-visibility-color: #333333; /* Low visibility for borders etc. */
@@ -33,7 +34,7 @@
     --low-visibility-color-active: #292929; /* Active color for borders etc. */
 }
 
-/* LAYOUT */
+/* ---------- LAYOUT ---------- */
 
 body {
     margin: 0;
@@ -59,6 +60,10 @@ ul {
     list-style-type: none;
 }
 
+.user-ul li {
+    margin-bottom: 4px;
+}
+
 input {
     height: 32px;
     color: var(--text-color-1);
@@ -68,12 +73,29 @@ input {
     border-radius: 10px;
 }
 
-/* TYPOGRAPHY */
+/* ---------- TYPOGRAPHY ---------- */
+/* Headings */
 h1 {
     font-size: 36px;
     font-weight: 600;
 }
 
+/* Special text */
+.username {
+    cursor: pointer;
+    margin: 0;
+}
+
+.username:hover {
+    text-decoration: underline;
+}
+
+.user-status-text {
+    margin-top: 4px;
+    margin-bottom: 0;
+}
+
+/* Links */
 a {
     text-decoration: none;
     color: var(--text-color-3)
@@ -83,7 +105,7 @@ a:hover {
     color: var(--accent-color)
 }
 
-/* HEADER */
+/* ---------- HEADER ---------- */
 header,
 footer {
     background: var(--background-color-2);
@@ -149,7 +171,7 @@ nav {
     margin-left: 16px;
 }
 
-/* MAIN */
+/* ---------- MAIN ---------- */
 
 main {
     min-height: calc(100svh - 180px); /* View height - (header + footer) */
@@ -159,10 +181,11 @@ main {
 }
 
 .main-page-main {
+    padding: 0;
     justify-content: center;
 }
 
-/* HERO SECTION */
+/* ---------- HERO SECTION ---------- */
 .hero-section .container {
     display: grid;
     width: fit-content;
@@ -209,7 +232,7 @@ main {
     gap: 16px;
 }
 
-/* SIGN UP / LOG IN SECTION */
+/* ---------- SIGN UP / LOG IN SECTION ---------- */
 .signup-section .container {
     display: grid;
     width: fit-content;
@@ -280,10 +303,10 @@ main {
     grid-area: heading;
 }
 
-/* MAIN - CHAT SECTION */
+/* ---------- MAIN - CHAT SECTION ---------- */
 .chat-section .container {
     width: calc(100vw - 400px);
-    min-height: calc(100svh - 700px);
+    min-height: calc(100svh - 400px);
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: 230px auto 230px;
@@ -297,11 +320,17 @@ main {
     padding: 20px;
 }
 
-/* Left chat panel */
+/*  ---------- LEFT CHAT PANEL ---------- */
 .user-img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+}
+
+.online-icon {
+    font-size: 12px;
+    margin-right: 4px;
+    color: var(--accent-color);
 }
 
 .flag-img {
@@ -310,12 +339,13 @@ main {
     border: 1px solid #DDDDDD;
 }
 
-/* Main chat panel */
+/* ---------- MAIN CHAT PANEL ---------- */
 .chat-section-main-panel {
     border: 1px solid #111111;
     position: relative;
 }
 
+/* Chat Header */
 .chat-section-main-panel-header {
     height: fit-content;
     background: #292929;
@@ -327,16 +357,33 @@ main {
     margin-left: 12px;
 }
 
-.chat-section-main-panel-header p {
-    margin: 0;
-}
-
+/* Chat Messages Window */
 .messages-window {
     padding: 24px;
 }
 
+.message {
+    width: 80%;
+    background: var(--low-visibility-color-active);
+    padding: 24px;
+    margin-top: 12px;
+    border-radius: 10px;
+}
+
+.message p {
+    margin: 0;
+}
+
+.sent {
+    margin-left: auto;
+    background: var(--accent-color-50);
+}
+
+
+/* Chat input window */
 .chat-input-window {
     width: 100%;
+    height: 180px;
     background: #292929;
     position: absolute;
     bottom: 0;
@@ -344,18 +391,39 @@ main {
 }
 
 .chat-input-window-icons {
-    color: var(--accent-color);
     display: flex;
     gap: 12px;
     margin: 0;
 }
 
 .chat-input-window-icons li {
+    color: var(--text-color-3);
     cursor: pointer;
+}
+
+.chat-input-window-icons li:hover {
+    color: var(--text-color-2);
+    cursor: pointer;
+}
+
+.chat-input-field {
+    position: absolute;
+    font-size: 1rem;
+    width: calc(100% - 48px - 48px);
+    height: calc(100% - 48px);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color-1);
+    background: none;
+    resize: none;
+    border: 0;
+    border-radius: 10px;
+    outline: none;
+    bottom: 12px;
 }
 
 .send-btn {
     display: block;
+    position: absolute; 
     width: 48px;
     height: 48px;
     font-size: 24px;
@@ -363,12 +431,31 @@ main {
     background: var(--primary-color);
     border: none;
     border-radius: 10px;
-    margin-left: auto;
     cursor: pointer;
+    bottom: 12px;
+    right: 24px;
+}
+
+/* ---------- RIGHT CHAT PANEL ---------- */
+/* Search Bar*/
+.user-search-bar {
+    position: relative;
+}
+
+.search-icon {
+    color: var(--text-color-3);
+    position: absolute;
+    transform: translate(0, 50%);
+    right: 12px;
+}
+
+.search-field {
+    width: 100%;
+    padding-right: 40px;
 }
 
 
-/* FOOTER */
+/* ---------- FOOTER ---------- */
 footer {
     height: 80px;
     color: var(--text-color-3);
@@ -377,7 +464,7 @@ footer {
     align-items: center;
 }
 
-/* BUTTONS */
+/* ---------- BUTTONS ---------- */
 .btn {
     color: var(--text-color-1);
     width: 300px;
@@ -416,9 +503,17 @@ footer {
     border-color: var(--low-visibility-color-active);
 }
 
-/* Utility classes */
+/* ---------- UTILITY CLASSES ---------- */
 .large-icon {
     font-size: 320px;
+}
+
+.inline {
+    display: inline;
+}
+
+.margin-0 {
+    margin: 0;
 }
 
 .text-3 {
