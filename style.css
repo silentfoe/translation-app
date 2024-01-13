@@ -278,7 +278,6 @@ main {
     border-radius: 0 24px 24px 0;
 }
 
-
 .signup-form,
 .login-form {
     display: grid;
@@ -302,6 +301,114 @@ main {
     margin: 0;
     grid-area: heading;
 }
+
+/* ---------- SITE LANGUAGE SECTION ---------- */
+.sitelanguage-section,
+.sitelanguage-section .container {
+    margin: 0; 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.sitelanguage-heading {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0 auto 1em auto;
+    width: 100%;
+    text-align: left;
+}
+
+.sitelanguage-heading .fa-random {
+    color: var(--accent-color);
+    padding-right: 0.5em;
+}
+
+.sitelanguage-section p {
+    font-size: 1.5rem;
+    margin: 1.5em 0;
+    font-weight: 600;
+}
+
+#current-language-selection {
+    margin: 0 1em;
+}
+
+.new-language-section {
+    display: flex;
+    flex-direction: row;
+}
+
+.new-language-selection {
+    width: max-content;
+}
+
+.language-dropdown-container {
+    float: left;
+    width: 25em;
+    overflow: hidden;
+    margin: auto 3em;
+}
+
+.language-dropdown-btn {
+    border-radius: 4px;
+    border: 1px solid var(--text-color-2);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    background: var(--text-color-1);
+    padding: 0.5em 0em 0.5em 1em;
+    text-align: left;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: auto 0;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.language-dropdown-btn i,
+.language-dropdown-menu i
+{
+    margin: auto 1em auto auto;
+    text-align: right; 
+}
+
+.language-dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: var(--primary-color);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    width: 25em;
+    overflow: scroll;
+    max-height: 9em;
+}
+
+/* shows the dropdown menu options */
+.language-dropdown-container:hover .language-dropdown-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.language-dropdown-menu button {
+    background: var(--text-color-1);
+    padding: 0.5em 0em 0.5em 1em;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: left;
+    border: none;
+    width: inherit;
+    cursor: pointer;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.language-dropdown-menu button:hover {
+    background:  var(--accent-color);
+}
+
 
 /* ---------- MAIN - CHAT SECTION ---------- */
 .chat-section .container {

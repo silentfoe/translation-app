@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <!-- Title -->
+        <title>Language learning platform | Site language</title>
+
+        <!-- CSS for styling -->
+        <link rel="stylesheet" href="style.css">
+
+        <!-- Font Awesome CDN for icons -->
+        <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!-- Viewport meta tag for mobile optimization -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+
+
+    <body>
+        <!-- Header -->
+        <div id="header-placeholder"></div>
+
+        <main>
+            <!-- Site Language section -->
+            <section class="sitelanguage-section">
+                <div class="container">
+                    <h1 class="sitelanguage-heading"><i class="fas fa-random"></i>Want To Change Languages?</h1>
+                    <p>Current Site Language: <span id="current-language-selection">English</span></p>
+                    <div class="new-language-section">
+                        <p class="new-language-selection">New Site Language:</p>
+                        <!-- change to new language dropdown menu -->
+                        <div class="language-dropdown-container" id="language-dropdown-container">
+                            <button id="language-dropdown-btn" class="language-dropdown-btn"> 
+                                English <i class="fa fa-caret-down"></i></button>
+                            <div class="language-dropdown-menu" id="language-dropdown-menu"> 
+                                <!-- The rest of language options will be filled here dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <div id="footer-placeholder"></div>
+
+        <!-- JavaScript -->
+        <script src="index.js"></script>
+    </body>
+</html>
