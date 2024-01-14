@@ -1,10 +1,11 @@
+// Import list of languages from languages.js
+import listOfLanguages from "./languages.js"
+
 // Load header
 fetch("header.html")
     .then(response => response.text())
     .then(data => {
         document.getElementById("header-placeholder").innerHTML = data
-        //must be loaded with initial header fetch to work
-        generateLanguageOptions()
     })
 
 // Load footer
@@ -13,6 +14,10 @@ fetch("footer.html")
     .then(data => {
         document.getElementById("footer-placeholder").innerHTML = data
     })
+
+//must be loaded with initial header fetch to work
+generateLanguageOptions()
+renderLanguageWheelListItems()
 
 
 // Add event listeners to document
@@ -38,14 +43,31 @@ document.addEventListener("click", function(event){
     }
 })
 
+// ********** User setup **********
+//creates all language options for language-wheel
+function renderLanguageWheelListItems() {
+    // Runs only if on User Setup page
+    if (document.getElementById("language-wheel")){
+        // Gets language list from languages.js imported at the top of the document
+        const formattedLanguageList = listOfLanguages.map(currentLanguage => {
+            return document.getElementById("language-wheel").innerHTML += 
+                `<li class="language-card">
+                    <img class="language-wheel-img" src="${currentLanguage.flag}">
+                    <p>${currentLanguage.language}</p>
+                </li>`
+        })
+    }
+}
+
+// ********** Site Language **********
 //creates all language options for dropdown menu
 function generateLanguageOptions() {
-    //can be replaced later with an API as project scales 
-    const listOfLanguages = ["English", "Mandarin", "Hindi", "Spanish", "French", "Arabic", "Bengali", "Russian",
-    "Portuguese", "Urdu", "Indonesian", "German", "Japanese", "Nigerian", "Turkish", "Tamil"]
-
-    const formattedLanguageList = listOfLanguages.map(current=> {
-        return document.getElementById("language-dropdown-menu").innerHTML += 
-            `<button id="${current}-btn" class="dropdown-menu-option">${current}</button>`
-    })
+    // Runs only if on Site Language page
+    if (document.getElementById("language-dropdown-menu")){
+        // Gets language list from languages.js imported at the top of the document
+        const formattedLanguageList = listOfLanguages.map(currentLanguage=> {
+            return document.getElementById("language-dropdown-menu").innerHTML += 
+                `<button id="${currentLanguage.language}-btn" class="dropdown-menu-option">${currentLanguage.language}</button>`
+        })
+    }
 }

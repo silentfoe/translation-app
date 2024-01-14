@@ -302,6 +302,26 @@ main {
     grid-area: heading;
 }
 
+/* ---------- USER SETUP ---------- */
+.language-wheel {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    gap: 1em;
+}
+
+.language-card {
+    min-width: 250px;
+    background: #222222;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+.language-wheel-img {
+    width: 200px;
+    height: 133px;
+}
+
 /* ---------- SITE LANGUAGE SECTION ---------- */
 .sitelanguage-section,
 .sitelanguage-section .container {
